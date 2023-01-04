@@ -1,0 +1,42 @@
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm p-3 py-3 py-lg-0 px-3 px-lg-0">
+    <a href="/products" class="navbar-brand ms-lg-5">
+        <h1 class="m-0 text-uppercase text-dark"><i class="bi bi-shop fs-1 text-primary me-3"></i>Pet Shop</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+            <div class="nav-item dropdown" style="padding-top: 16px">
+                <!-- Search Form Start -->
+                <form action="/products/search" method="post" enctype="multipart/form-data">
+                    <div class="input-group">
+                        <input name="key" type="text" class="form-control p-3" placeholder="Keyword" required>
+                        <button type="submit" class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </form>
+                <!-- Search Form End -->
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">classify</a>
+                <div class="dropdown-menu m-0">
+                    <a href="/products/search/husky" class="dropdown-item">husky</a>
+                    <a href="/products/search/corgi" class="dropdown-item">corgi</a>
+                    <a href="/products/search/alaska" class="dropdown-item">alaska</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">CRUD</a>
+                <div class="dropdown-menu m-0">
+                    <a href="/products/creat" class="dropdown-item">Creat Product</a>
+                    <a href="/products/manage" class="dropdown-item">Manage Product</a>
+                </div>
+            </div>
+            <a href="https://www.facebook.com/m.a1922002"
+               class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Contact <i
+                        class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->

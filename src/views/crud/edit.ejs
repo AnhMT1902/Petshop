@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        input[type="file"]::file-selector-button {
+            border: 2px solid #6c5ce7;
+            padding: 0.2em 0.4em;
+            border-radius: 0.2em;
+            background-color: #a29bfe;
+            transition: 1s;
+        }
+
+        input[type="file"]::-ms-browse:hover {
+            background-color: #81ecec;
+            border: 2px solid #00cec9;
+        }
+
+        input[type="file"]::-webkit-file-upload-button:hover {
+            background-color: #81ecec;
+            border: 2px solid #00cec9;
+        }
+
+        input[type="file"]::file-selector-button:hover {
+            background-color: #81ecec;
+            border: 2px solid #00cec9;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>PET SHOP - Pet Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="/lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+<%- include('../parial/nav') %>
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h6 class="text-primary text-uppercase">Contact Us</h6>
+            <h1 class="display-5 text-uppercase mb-0">EDIT PRODUCT</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <form action="/products/edit/<%= products[0].id %>" method="post" enctype="multipart/form-data">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <input value="<%= products[0].name %>" type="text"
+                                   class="form-control bg-light border-0 px-4"
+                                   placeholder="name"
+                                   name="name" style="height: 55px;" required>
+                        </div>
+                        <div class="col-12">
+                            <input type="number" class="form-control bg-light border-0 px-4" placeholder="price"
+                                   name="price" style="height: 55px;" required value="<%= products[0].price %>">
+                        </div>
+                        <div class="col-12">
+                            <input type="number" class="form-control bg-light border-0 px-4" placeholder="age"
+                                   name="age"
+                                   style="height: 55px;" value="<%= products[0].age %>">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control bg-light border-0 px-4" placeholder="color"
+                                   name="color" style="height: 55px;" required value="<%= products[0].color %>">
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control bg-light border-0 px-4 py-3" rows="5"
+                                      placeholder="description"
+                                      name="description"><%= products[0].description %></textarea>
+                        </div>
+                        <div class="col-12">
+                            <select name="gender" id="" required>
+                                <option value="<%= products[0].gender %>"><%= products[0].gender %></option>
+                                <option value="male">male</option>
+                                <option value="female">female</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <select name="species" id="">
+                                <option value="<%= products[0].id_species %>"><%= products[0].species %></option>
+                                <option value="1">corgi</option>
+                                <option value="2">husky</option>
+                                <option value="3">alaska</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <input type="file" accept="image/*" name="image" multiple required/>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">edit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-5">
+                <div class="bg-light mb-5 p-5">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
+                        <div class="text-start">
+                            <h6 class="text-uppercase mb-1">Our Office</h6>
+                            <span><a href="https://goo.gl/maps/dTFj3uPE4qfBmNvi8"> 01 NGUYEN HUY TUONG, THANH XUAN, HA NOI</a>  </span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-envelope-open fs-1 text-primary me-3"></i>
+                        <div class="text-start">
+                            <h6 class="text-uppercase mb-1">Email Us</h6>
+                            <span><a href="https://mail.google.com/mail/u/0/?pli=1#inbox">
+                                minhanh190202@gmail.com
+                            </a></span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
+                        <div class="text-start">
+                            <h6 class="text-uppercase mb-1">Call Us</h6>
+                            <span>+84 978 363 413</span>
+                        </div>
+                    </div>
+                    <div>
+                        <iframe class="position-relative w-100"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                                frameborder="0" style="height: 205px; border:0;" allowfullscreen="" aria-hidden="false"
+                                tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
